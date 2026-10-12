@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     oauthClientSecret: '',
     public: {
+      oauthHost: '',
       oauthClientId: '',
     },
   },

@@ -1,6 +1,6 @@
-# Nuxt Minimal Starter
+# Nuxt OAuth Client
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is an example nuxt client for [django oauth](https://github.com/aquashdw/django-oauth).
 
 ## Setup
 
