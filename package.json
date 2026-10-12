@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-fs-front",
+  "name": "nuxt-oauth-client",
   "type": "module",
   "private": true,
   "scripts": {
