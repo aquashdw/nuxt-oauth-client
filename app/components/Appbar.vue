@@ -1,3 +1,4 @@
+<!-- this appbar is intended to work only when authenticated -->
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -7,8 +8,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <div class="navbar-nav">
-          <NuxtLink class="nav-link active" to="/servers">Servers</NuxtLink>
-          <NuxtLink class="nav-link active" to="/register">Register Server</NuxtLink>
+          <!-- add links here -->
         </div>
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ name }}</a>
