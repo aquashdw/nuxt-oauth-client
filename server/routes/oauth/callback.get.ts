@@ -1,17 +1,18 @@
 const config = useRuntimeConfig()
 const { oauthClientSecret: clientSecret } = config
+const { appUrl, oauthHost } = config.public
 
 export default defineEventHandler(async (event) => {
   const { code } = getQuery(event)
   const { access_token: accessToken, refresh_token: refreshToken } = await fetch(
-    'http://localhost:8000/oauth/token/',
+    `${oauthHost}/oauth/token/`,
     {
       method: 'post',
       body: JSON.stringify({
         code,
         grant_type: 'code',
         client_secret: clientSecret,
-        redirect_uri: 'http://localhost:3000/oauth/callback',
+        redirect_uri: `${appUrl}/oauth/callback`,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +22,7 @@ export default defineEventHandler(async (event) => {
   .catch(err => console.error(err))
 
   const { nickname, email } = await fetch(
-    'http://localhost:8000/oauth/user-info/',
+    `${oauthHost}/oauth/user-info/`,
     {
       method: 'get',
       headers: {

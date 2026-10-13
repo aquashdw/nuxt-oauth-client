@@ -12,11 +12,11 @@
 definePageMeta({
   layout: false,
 })
-const { oauthHost: oauthHost, oauthClientId: clientId } = useRuntimeConfig().public
+const { appUrl, oauthHost, oauthClientId: clientId } = useRuntimeConfig().public
 const { loggedIn, user, clear } = useUserSession()
 const toLogin = async () => {
   console.log('move to auth')
-  await navigateTo(`${oauthHost}/oauth/authorize/?clientid=${clientId}&callback=http://localhost:3000/oauth/callback&response_type=code`, {
+  await navigateTo(`${oauthHost}/oauth/authorize/?clientid=${clientId}&callback=${appUrl}/oauth/callback&response_type=code`, {
     external: true,
   })
 }
